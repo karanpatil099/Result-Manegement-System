@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    device-width, initial-scale=1.0">
+     <style>
+        
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #007bff; 
+    text-align: center;
+}
+
+
+.notifications-container {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 600px;
+    margin-bottom: 1rem;
+}
+
+.notifications-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notifications-container li {
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.notifications-container li:last-child {
+    margin-bottom: 0;
+}
+
+.notifications-container strong {
+    color: #007bff; 
+}
+
+
+.notifications-container li:before {
+    content: '🔔'; 
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: center;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    .notifications-container {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        width: 90%;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+     </style>
+    <title>Notification</title>
+</head>
+<body>
+    <h2>Notifications</h2>
+    <div class="notifications-container">
+        <ul>
+            <li><strong>Result Published:</strong> Winter Semester 2024 results are now available.</li>
+            <li><strong>Deadline Reminder:</strong> Final Year project submissions due by December 15, 2024.</li>
+            <li><strong>Holiday Announcement:</strong> The university will remain closed from December 25 to January 1.</li>
+        </ul>
+    </div>
+    <button onclick="window.history.back()">Go Back</button>
+</body>
+</html>

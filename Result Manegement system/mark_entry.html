@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Entry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="mark_entry syles.css"> -->
+     <Style>
+        /* General Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9; /* Light background color */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #007bff; /* Blue background */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Mark Entry Section */
+.mark-entry-section {
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+/* Table Styling */
+.mark-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.mark-table thead {
+    background: #007bff; /* Blue header */
+    color: white;
+}
+
+.mark-table th,
+.mark-table td {
+    padding: 0.8rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.mark-table tbody tr:nth-child(even) {
+    background: #f9f9f9; /* Light gray for even rows */
+}
+
+.mark-table tbody tr:hover {
+    background: #f1f1f1; /* Highlight row on hover */
+}
+
+.mark-table input[type="number"] {
+    width: 70px;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Button Styling */
+.btn-submit {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .mark-table input[type="number"] {
+        width: 50px;
+    }
+
+    .btn-submit {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+     </Style>
+</head>
+<body>
+    <header>
+        <h1>Mark Entry Portal</h1>
+    </header>
+    <section class="mark-entry-section">
+        <div class="container">
+            <form class="mark-form">
+                <table class="mark-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>PRN</th>
+                            <th>Subject 1</th>
+                            <th>Subject 2</th>
+                            <th>Subject 3</th>
+                            <th>Subject 4</th>
+                            <th>Subject 5</th>
+                            <th>Practical</th>
+                            <th>Submit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>123456</td>
+                            <td><input type="number" placeholder="Marks" min="0" max="100"></td>
+                            <td><input type="number" placeholder="Marks" min="0" max="100"></td>
+                            <td><input type="number" placeholder="Marks" min="0" max="100"></td>
+                            <td><input type="number" placeholder="Marks" min="0" max="100"></td>
+                            <td><input type="number" placeholder="Marks" min="0" max="100"></td>
+                            <td><input type="number" placeholder="Marks" min="0" max="100"></td>
+                            <td><button type="submit" class="btn-submit">Submit</button></td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>789012</td>
+                            <td><input type="number" placeholder="Marks" min="0" max="100"></td>
+                            <td><input type="number" placeholder="Marks" min="0" max="100"></td>
+                            <td><input type="number" placeholder="Marks" min="0" max="100"></td>
+                            <td><input type="number" placeholder="Marks" min="0" max="100"></td>
+                            <td><input type="number" placeholder="Marks" min="0" max="100"></td>
+                            <td><input type="number" placeholder="Marks" min="0" max="100"></td>
+                            <td><button type="submit" class="btn-submit">Submit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
+

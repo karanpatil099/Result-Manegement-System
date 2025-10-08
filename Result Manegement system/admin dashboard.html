@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn-primary {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Student Information</h1>
+        <form id="studentForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter student name" required>
+            </div>
+            <div class="form-group">
+                <label for="rollNumber">Roll Number:</label>
+                <input type="number" class="form-control" id="rollNumber" placeholder="Enter roll number" required>
+            </div>
+            <div class="form-group">
+                <label for="dbms">Economics and Management Marks:</label>
+                <input type="number" class="form-control" id="dbms" placeholder="Enter marks in E&M" required>
+            </div>
+            <div class="form-group">
+                <label for="toc">Theory of Computation Marks:</label>
+                <input type="number" class="form-control" id="toc" placeholder="Enter marks in TOC" required>
+            </div>
+            <div class="form-group">
+                <label for="nm">Numerical Method Marks:</label>
+                <input type="number" class="form-control" id="nm" placeholder="Enter marks in NM" required>
+            </div>
+            <div class="form-group">
+                <label for="se">Software Engineering Marks:</label>
+                <input type="number" class="form-control" id="se" placeholder="Enter marks in SE" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('studentForm').addEventListener('submit', function (e) {
+            e.preventDefault(); 
+
+            
+            const student = {
+                name: document.getElementById('name').value,
+                rollNumber: document.getElementById('rollNumber').value,
+                dbms: document.getElementById('dbms').value, // Correct ID
+                toc: document.getElementById('toc').value,   // Correct ID
+                nm: document.getElementById('nm').value,     // Correct ID
+                se: document.getElementById('se').value      // Correct ID
+            };
+
+            
+            let students = JSON.parse(localStorage.getItem('students'));
+
+    if (!Array.isArray(students)) {
+        students = []; // If the retrieved value is not an array, initialize it as an empty array
+    }
+
+    // Add the new student to the array
+    students.push(student);
+
+    // Save the updated students array back to localStorage
+    localStorage.setItem('students', JSON.stringify(students));
+
+    // Redirect to another page
+    window.location.href = 'secondpage.html';
+        });
+    </script>
+</body>
+</html>

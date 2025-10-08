@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Student Login</h1>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="prn">PRN (Permanent Registration Number):</label>
+                <input type="text" class="form-control" id="prn" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+
+        
+        <div id="studentDetails" class="mt-4" style="display:none;">
+            <h2>Welcome, <span id="studentName"></span></h2>
+            <table class="table table-bordered">
+                <tr><td>Name</td><td id="studentNameDetails"></td></tr>
+                <tr><td>Roll Number</td><td id="studentRoll"></td></tr>
+                <tr><td>Economics and Management Marks</td><td id="studentdbms"></td></tr>
+                <tr><td>Theory of Computation Marks</td><td id="studentToc"></td></tr>
+                <tr><td>Numerical Method Marks</td><td id="studentNm"></td></tr>
+                <tr><td>Software Engineering Marks</td><td id="studentSe"></td></tr>
+                <tr><td>Total Marks</td><td id="studentTotal"></td></tr>
+                <tr><td>SGPA</td><td id="studentPercentage"></td></tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        
+        const students = [
+            {
+                prn: '2230331245052',
+                password: 'omkarzite',
+                name: 'Omkar Zite',
+                rollNumber: '5052',
+                dbms: 85,
+                toc: 90,
+                nm: 88,
+                se: 92
+            },
+            {
+                prn: '2230331245029',
+                password: 'hansketrathod',
+                name: 'hansket rathod',
+                rollNumber: '102',
+                dbms: 78,
+                toc: 85,
+                nm: 80,
+                se: 89
+            }
+        ];
+
+        
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const prn = document.getElementById('prn').value;
+            const password = document.getElementById('password').value;
+            const student = students.find(s => s.prn === prn && s.password === password);
+
+            if (student) {
+                
+                document.getElementById('studentDetails').style.display = 'block';
+                document.getElementById('studentName').innerText = student.name;
+                document.getElementById('studentNameDetails').innerText = student.name;
+                document.getElementById('studentRoll').innerText = student.rollNumber;
+                document.getElementById('studentE&M').innerText = student.dbms;
+                document.getElementById('studentToc').innerText = student.toc;
+                document.getElementById('studentNm').innerText = student.nm;
+                document.getElementById('studentSe').innerText = student.se;
+
+                const totalMarks = student.E&M + student.toc + student.nm + student.se;
+                const percentage = (totalMarks / (10*400)) * 100;
+                document.getElementById('studentTotal').innerText = totalMarks;
+                document.getElementById('studentPercentage').innerText = percentage.toFixed(2) + '%';
+            } else {
+                alert('Invalid PRN or Password');
+            }
+        });
+    </script>
+</body>
+</html>
